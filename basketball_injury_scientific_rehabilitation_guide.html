@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>篮球运动损伤与科学康复指南 | Basketball Injury & Scientific Rehabilitation Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Language visibility rules */
+        [data-lang="zh"] .lang-en { display: none !important; }
+        [data-lang="en"] .lang-zh { display: none !important; }
+
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+
+        /* Glassmorphism Header */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Interactive Card Elevate Animation */
+        .injury-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .injury-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(13, 148, 136, 0.15);
+        }
+
+        /* Hide Scrollbar for Horizontal Scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
+
+    <header class="w-full glass-header border-b border-slate-200/80 shadow-sm transition-all duration-300 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-2">
+                <!-- Website Logo & Title -->
+                <a href="#hero" class="flex items-center space-x-2.5 group shrink-0">
+                    <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-black text-sm shadow-md shadow-teal-600/20 group-hover:bg-teal-700 transition-colors shrink-0">
+                        BR
+                    </div>
+                    <div class="hidden lg:block">
+                        <span class="font-extrabold text-slate-900 text-sm tracking-tight block leading-tight">
+                            <span class="lang-zh">篮球运动伤病康复指南</span>
+                            <span class="lang-en">Basketball Rehab Science</span>
+                        </span>
+                        <span class="text-[10px] text-teal-600 font-semibold tracking-wide block leading-none mt-0.5">
+                            <span class="lang-zh">科学防伤与循证康复平台</span>
+                            <span class="lang-en">Injury & Science Recovery Guide</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Quick Jump Navigation Buttons -->
+                <nav class="hidden md:flex items-center space-x-0.5 lg:space-x-1 bg-slate-100/80 p-1 rounded-full border border-slate-200/60">
+                    <a href="#ankle" class="px-3 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-teal-700 hover:bg-white transition-all whitespace-nowrap">
+                        <span class="lang-zh">踝足部</span><span class="lang-en">Ankle & Foot</span>
+                    </a>
+                    <a href="#knee" class="px-3 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-teal-700 hover:bg-white transition-all whitespace-nowrap">
+                        <span class="lang-zh">膝关节</span><span class="lang-en">Knee Joint</span>
+                    </a>
+                    <a href="#shoulder" class="px-3 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-teal-700 hover:bg-white transition-all whitespace-nowrap">
+                        <span class="lang-zh">肩部</span><span class="lang-en">Shoulder</span>
+                    </a>
+                    <a href="#finger" class="px-3 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-teal-700 hover:bg-white transition-all whitespace-nowrap">
+                        <span class="lang-zh">手部</span><span class="lang-en">Wrist & Hand</span>
+                    </a>
+                    <a href="#back" class="px-3 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-teal-700 hover:bg-white transition-all whitespace-nowrap">
+                        <span class="lang-zh">腰背部</span><span class="lang-en">Lower Back</span>
+                    </a>
+                </nav>
+
+                <!-- Action & Language Switcher Buttons -->
+                <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+                    <!-- Language Toggle Switcher -->
+                    <div class="inline-flex items-center bg-slate-200/80 p-0.5 rounded-lg text-xs font-bold border border-slate-300/50">
+                        <button id="lang-zh-btn" onclick="setLanguage('zh')" class="px-2 py-1 rounded-md transition-all text-xs">中文</button>
+                        <button id="lang-en-btn" onclick="setLanguage('en')" class="px-2 py-1 rounded-md transition-all text-xs">EN</button>
+                    </div>
+
+                    <button onclick="toggleSearchModal()" class="px-3 py-1.5 text-xs font-bold text-slate-600 hover:text-teal-600 hover:bg-slate-100 rounded-lg transition-colors border border-slate-200" title="Search">
+                        <span class="lang-zh">搜索</span><span class="lang-en">Search</span>
+                    </button>
+                    <a href="#mindset" class="inline-flex items-center text-xs font-bold text-slate-600 hover:text-teal-600 px-2.5 py-1.5 rounded-lg hover:bg-slate-100 transition-colors whitespace-nowrap">
+                        <span class="lang-zh">心理康复</span><span class="lang-en">Mental</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Horizontal Scrollable Nav Bar -->
+        <div class="md:hidden bg-slate-100/90 border-t border-slate-200 px-4 py-2 flex items-center space-x-2 overflow-x-auto text-xs font-bold no-scrollbar">
+            <span class="text-slate-400 whitespace-nowrap">
+                <span class="lang-zh">跳转：</span><span class="lang-en">Jump:</span>
+            </span>
+            <a href="#ankle" class="px-2.5 py-1 rounded-full bg-white text-slate-700 shadow-sm whitespace-nowrap">
+                <span class="lang-zh">踝足部</span><span class="lang-en">Ankle</span>
+            </a>
+            <a href="#knee" class="px-2.5 py-1 rounded-full bg-white text-slate-700 shadow-sm whitespace-nowrap">
+                <span class="lang-zh">膝关节</span><span class="lang-en">Knee</span>
+            </a>
+            <a href="#shoulder" class="px-2.5 py-1 rounded-full bg-white text-slate-700 shadow-sm whitespace-nowrap">
+                <span class="lang-zh">肩部</span><span class="lang-en">Shoulder</span>
+            </a>
+            <a href="#finger" class="px-2.5 py-1 rounded-full bg-white text-slate-700 shadow-sm whitespace-nowrap">
+                <span class="lang-zh">手部</span><span class="lang-en">Wrist</span>
+            </a>
+            <a href="#back" class="px-2.5 py-1 rounded-full bg-white text-slate-700 shadow-sm whitespace-nowrap">
+                <span class="lang-zh">腰背部</span><span class="lang-en">Back</span>
+            </a>
+            <a href="#mindset" class="px-2.5 py-1 rounded-full bg-rose-50 text-rose-600 shadow-sm whitespace-nowrap">
+                <span class="lang-zh">心理</span><span class="lang-en">Mental</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative bg-slate-900 text-white overflow-hidden py-16 lg:py-24 border-b border-slate-800">
+        <!-- Background Basketball Image -->
+        <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/60 z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-6">
+                    <span class="lang-zh">远离伤病困扰，<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400">用科学力量重返赛场</span></span>
+                    <span class="lang-en">Prevent Injury Pain,<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400">Reclaim the Court with Science</span></span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl">
+                    <span class="lang-zh">篮球运动充满了高强度的变向、起跳、落地与身体接触。本指南专为篮球队员与篮球爱好者打造，提供直观的生物力学分析、科学防伤指南与循证康复方案。</span>
+                    <span class="lang-en">Basketball demands intense cutting, jumping, landing, and physical contact. This project delivers intuitive biomechanical analysis, practical prevention guidelines, and evidence-based rehabilitation protocols for basketball players and athletes.</span>
+                </p>
+
+                <!-- Quick Jump Shortcut Cards inside Hero -->
+                <div id="quick-menu" class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-6 border-t border-slate-800">
+                    <a href="#ankle" class="bg-slate-800/80 hover:bg-teal-600/90 border border-slate-700/80 p-3.5 rounded-xl transition-all text-center group">
+                        <span class="text-xs font-bold block text-teal-400 group-hover:text-white mb-0.5">01</span>
+                        <span class="text-xs font-bold block text-white">
+                            <span class="lang-zh">踝关节与足部</span><span class="lang-en">Ankle & Foot</span>
+                        </span>
+                    </a>
+                    <a href="#ankle" class="bg-slate-800/80 hover:bg-teal-600/90 border border-slate-700/80 p-3.5 rounded-xl transition-all text-center group">
+                        <span class="text-xs font-bold block text-teal-400 group-hover:text-white mb-0.5">02</span>
+                        <span class="text-xs font-bold block text-white">
+                            <span class="lang-zh">膝关节结构</span><span class="lang-en">Knee Joint</span>
+                        </span>
+                    </a>
+                    <a href="#shoulder" class="bg-slate-800/80 hover:bg-teal-600/90 border border-slate-700/80 p-3.5 rounded-xl transition-all text-center group">
+                        <span class="text-xs font-bold block text-teal-400 group-hover:text-white mb-0.5">03</span>
+                        <span class="text-xs font-bold block text-white">
+                            <span class="lang-zh">肩部与上肢</span><span class="lang-en">Shoulder</span>
+                        </span>
+                    </a>
+                    <a href="#finger" class="bg-slate-800/80 hover:bg-teal-600/90 border border-slate-700/80 p-3.5 rounded-xl transition-all text-center group">
+                        <span class="text-xs font-bold block text-teal-400 group-hover:text-white mb-0.5">04</span>
+                        <span class="text-xs font-bold block text-white">
+                            <span class="lang-zh">手腕与手指</span><span class="lang-en">Wrist & Hand</span>
+                        </span>
+                    </a>
+                    <a href="#back" class="bg-slate-800/80 hover:bg-teal-600/90 border border-slate-700/80 p-3.5 rounded-xl transition-all text-center group col-span-2 sm:col-span-1">
+                        <span class="text-xs font-bold block text-teal-400 group-hover:text-white mb-0.5">05</span>
+                        <span class="text-xs font-bold block text-white">
+                            <span class="lang-zh">腰背与核心</span><span class="lang-en">Lower Back</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+        <!-- 1. ANKLE & FOOT SECTION -->
+        <section id="ankle" class="scroll-mt-8">
+            <div class="border-b border-slate-200 pb-4 mb-8 flex items-end justify-between">
+                <div>
+                    <span class="text-xs font-extrabold text-teal-600 uppercase tracking-widest block mb-1">
+                        <span class="lang-zh">部位 01</span><span class="lang-en">Region 01</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+                        <span class="lang-zh">踝关节与足部损伤</span>
+                        <span class="lang-en">Ankle & Foot Injuries</span>
+                    </h2>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 bg-rose-100 text-rose-700 rounded-full">
+                    <span class="lang-zh">篮球运动发病率第一（>40%）</span>
+                    <span class="lang-en">Most Common Basketball Injury (>40%)</span>
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Injury Card 1: Ankle Sprain -->
+                <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                <span class="lang-zh">外侧踝关节扭伤（崴脚）</span>
+                                <span class="lang-en">Inversion Ankle Sprain ("Rolled Ankle")</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Photo -->
+                    <div class="relative w-full h-48 rounded-xl overflow-hidden mb-6 border border-slate-200/80 shadow-inner group">
+                        <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&w=800&q=80" 
+                             alt="Ankle Sprain & Physical Therapy Taping" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/0f172a/14b8a6?text=Ankle+Sprain+Physical+Therapy';"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent flex items-end p-3">
+                            <span class="text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+                                <span class="lang-zh">实拍示意：踝关节外侧距腓前韧带防伤贴扎与评估</span>
+                                <span class="lang-en">Photo: Lateral Ankle Ligament Assessment & Taping</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">发生原因</span><span class="lang-en">Causes</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="lang-zh">拼抢篮板落地踩到他人脚背、防守急停变向时足部剧烈内翻，导致外侧距腓前韧带被过度拉伸甚至撕裂。</span>
+                                <span class="lang-en">Landing on another player's foot or sudden cutting movements causing severe ankle inversion, stretching or tearing the anterior talofibular ligament.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">预防方法</span><span class="lang-en">Prevention</span>
+                            </h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1 pl-1">
+                                <li><span class="lang-zh">穿戴具备良好侧向支撑的球鞋或高阶运动护踝。</span><span class="lang-en">Wear supportive basketball shoes or high-grade ankle braces.</span></li>
+                                <li><span class="lang-zh">日常进行单脚平衡站立、平衡垫训练以增强踝关节本体感觉。</span><span class="lang-en">Perform single-leg balance and wobble board exercises to improve proprioception.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">科学康复步骤</span><span class="lang-en">Rehabilitation Protocol</span>
+                            </h4>
+                            <ol class="list-decimal list-inside text-slate-600 space-y-1 pl-1">
+                                <li><strong><span class="lang-zh">急性期：</span><span class="lang-en">Acute: </span></strong><span class="lang-zh">实施 POLICE 保护与冷敷，消肿镇痛。</span><span class="lang-en">Apply P.O.L.I.C.E protocol to manage pain and swelling.</span></li>
+                                <li><strong><span class="lang-zh">恢复期：</span><span class="lang-en">Recovery: </span></strong><span class="lang-zh">踝关节字母写字训练，恢复主动关节活动度。</span><span class="lang-en">Ankle alphabet exercises for ROM.</span></li>
+                                <li><strong><span class="lang-zh">强化期：</span><span class="lang-en">Strengthening: </span></strong><span class="lang-zh">弹力带抗阻内外翻训练、提踵增强小腿力量。</span><span class="lang-en">Resistance band eversion/inversion & calf raises.</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Injury Card 2: Achilles Tendonitis -->
+                <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                <span class="lang-zh">跟腱炎</span>
+                                <span class="lang-en">Achilles Tendonitis</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Photo -->
+                    <div class="relative w-full h-48 rounded-xl overflow-hidden mb-6 border border-slate-200/80 shadow-inner group">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
+                             alt="Achilles Tendonitis Rehab & Calf Stretch" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/0f172a/14b8a6?text=Achilles+Tendon+Rehab';"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent flex items-end p-3">
+                            <span class="text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+                                <span class="lang-zh">实拍示意：小腿后肌群与跟腱物理放松与离心训练</span>
+                                <span class="lang-en">Photo: Calf & Achilles Tendon Physical Therapy & Eccentric Exercise</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">发生原因</span><span class="lang-en">Causes</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="lang-zh">反复高强度弹跳起跳、缺乏充分热身，或小腿比目鱼肌与腓肠肌过度紧绷，导致跟腱附着点承受过高张力。</span>
+                                <span class="lang-en">Repeated jumping, insufficient warm-up, or tight gastrocnemius/soleus muscles causing excessive tension on the Achilles tendon.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">预防方法</span><span class="lang-en">Prevention</span>
+                            </h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1 pl-1">
+                                <li><span class="lang-zh">训练前后充分进行小腿肌肉深层拉伸与筋膜放松。</span><span class="lang-en">Perform deep calf stretching & foam rolling before and after games.</span></li>
+                                <li><span class="lang-zh">避免突然大幅增加训练负荷与高频弹跳量。</span><span class="lang-en">Avoid sudden spikes in training volume or jump drills.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">科学康复步骤</span><span class="lang-en">Rehabilitation Protocol</span>
+                            </h4>
+                            <ol class="list-decimal list-inside text-slate-600 space-y-1 pl-1">
+                                <li><strong><span class="lang-zh">离心训练：</span><span class="lang-en">Eccentric Exercise: </span></strong><span class="lang-zh">台阶离心提踵训练，缓慢降低脚跟。</span><span class="lang-en">Eccentric heel drops on a step, slowly lowering the heel.</span></li>
+                                <li><strong><span class="lang-zh">筋膜梳理：</span><span class="lang-en">Myofascial Release: </span></strong><span class="lang-zh">滚球放松足底筋膜，降低跟腱整体张力。</span><span class="lang-en">Plantar fascia ball rolling to relieve overall strain.</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. KNEE JOINT SECTION -->
+        <section id="knee" class="scroll-mt-8">
+            <div class="border-b border-slate-200 pb-4 mb-8 flex items-end justify-between">
+                <div>
+                    <span class="text-xs font-extrabold text-teal-600 uppercase tracking-widest block mb-1">
+                        <span class="lang-zh">部位 02</span><span class="lang-en">Region 02</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+                        <span class="lang-zh">膝关节损伤</span>
+                        <span class="lang-en">Knee Joint Injuries</span>
+                    </h2>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
+                    <span class="lang-zh">高风险重点防护区</span>
+                    <span class="lang-en">High-Risk Impact Zone</span>
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Injury Card 3: ACL Tear -->
+                <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                <span class="lang-zh">前交叉韧带损伤</span>
+                                <span class="lang-en">Anterior Cruciate Ligament (ACL) Tear</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Photo -->
+                    <div class="relative w-full h-48 rounded-xl overflow-hidden mb-6 border border-slate-200/80 shadow-inner group">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" 
+                             alt="Knee ACL Examination & Physical Therapy" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/0f172a/14b8a6?text=Knee+ACL+Assessment';"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent flex items-end p-3">
+                            <span class="text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+                                <span class="lang-zh">实拍示意：膝关节前交叉韧带医学触诊与评估</span>
+                                <span class="lang-en">Photo: Medical ACL Palpation & Physical Examination</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">发生原因</span><span class="lang-en">Causes</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="lang-zh">急停急转或单腿落地时出现膝关节内扣塌陷，股骨与胫骨发生剧烈扭转，拉力超出韧带最大生理极限。</span>
+                                <span class="lang-en">Knee valgus collapse during sudden cutting or single-leg landing, exceeding physiological limits of the ACL.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">预防方法</span><span class="lang-en">Prevention</span>
+                            </h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1 pl-1">
+                                <li><span class="lang-zh">建立正确的落地姿势机制：双腿屈膝屈髋缓冲，避免膝盖向内塌陷。</span><span class="lang-en">Train proper jump-landing mechanics (hip & knee flexion, avoiding valgus).</span></li>
+                                <li><span class="lang-zh">加强臀中肌与腘绳肌力量，提升膝关节动态稳定性。</span><span class="lang-en">Strengthen gluteus medius and hamstrings to enhance stability.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">科学康复步骤</span><span class="lang-en">Rehabilitation Protocol</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="lang-zh">严重撕裂通常需要手术重建。术后需经历 6-9 个月的系统物理治疗，包含膝关节屈伸度重建、股四头肌激活与神经肌肉控制训练。</span>
+                                <span class="lang-en">Surgical reconstruction required for severe tears, followed by 6-9 months of physical therapy focused on range of motion, quad activation, and neuromuscular control.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Injury Card 4: Patellar Tendonitis -->
+                <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">
+                                <span class="lang-zh">髌骨肌腱炎（跳跃膝）</span>
+                                <span class="lang-en">Patellar Tendonitis ("Jumper's Knee")</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Photo -->
+                    <div class="relative w-full h-48 rounded-xl overflow-hidden mb-6 border border-slate-200/80 shadow-inner group">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" 
+                             alt="Jumper Knee Patellar Tendon Rehab" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/0f172a/14b8a6?text=Patellar+Tendon+Rehab';"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent flex items-end p-3">
+                            <span class="text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+                                <span class="lang-zh">实拍示意：膝盖髌腱防护与下肢力量锻炼</span>
+                                <span class="lang-en">Photo: Patellar Tendon Protection & Lower Limb Exercise</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">发生原因</span><span class="lang-en">Causes</span>
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="lang-zh">高频起跳与落地缓冲使股四头肌产生强大收缩力，集中拉扯髌骨下方髌腱，形成无菌性微小损伤累积。</span>
+                                <span class="lang-en">Repetitive jumping and landing creating high forces through the quadriceps tendon, leading to micro-tears in the patellar tendon.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">预防方法</span><span class="lang-en">Prevention</span>
+                            </h4>
+                            <ul class="list-disc list-inside text-slate-600 space-y-1 pl-1">
+                                <li><span class="lang-zh">使用髌骨加压带分担髌腱承载的张力。</span><span class="lang-en">Use a patellar strap to unload pressure on the tendon.</span></li>
+                                <li><span class="lang-zh">充分滚压放松股四头肌与髂胫束，降低肌腱张力。</span><span class="lang-en">Foam roll quads and IT bands regularly.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">
+                                <span class="lang-zh">科学康复步骤</span><span class="lang-en">Rehabilitation Protocol</span>
+                            </h4>
+                            <ol class="list-decimal list-inside text-slate-600 space-y-1 pl-1">
+                                <li><strong><span class="lang-zh">等长收缩：</span><span class="lang-en">Isometrics: </span></strong><span class="lang-zh">靠墙静蹲保持 45 秒，有效阻断疼痛信号。</span><span class="lang-en">Wall sits (45-sec holds) for pain relief.</span></li>
+                                <li><strong><span class="lang-zh">斜板下蹲：</span><span class="lang-en">Decline Squats: </span></strong><span class="lang-zh">利用 25 度斜板做单腿下蹲，重构肌腱纤维耐受力。</span><span class="lang-en">Single-leg decline board squats to rebuild tendon tolerance.</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SHOULDER & UPPER BODY SECTION -->
+        <section id="shoulder" class="scroll-mt-8">
+            <div class="border-b border-slate-200 pb-4 mb-8 flex items-end justify-between">
+                <div>
+                    <span class="text-xs font-extrabold text-teal-600 uppercase tracking-widest block mb-1">
+                        <span class="lang-zh">部位 03</span><span class="lang-en">Region 03</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+                        <span class="lang-zh">肩部与上肢损伤</span>
+                        <span class="lang-en">Shoulder & Upper Body Injuries</span>
+                    </h2>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 bg-sky-100 text-sky-700 rounded-full">
+                    <span class="lang-zh">抢篮板与封盖高发区</span>
+                    <span class="lang-en">Rebounding & Blocking Impact Zone</span>
+                </span>
+            </div>
+
+            <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            <span class="lang-zh">肩袖拉伤与肩关节脱位</span>
+                            <span class="lang-en">Rotator Cuff Strain & Shoulder Dislocation</span>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-slate-900 mb-2">
+                            <span class="lang-zh">发生原因</span><span class="lang-en">Causes</span>
+                        </h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            <span class="lang-zh">手臂高举封盖或抢球时受到外力强行拉扯，引起冈上肌等肩袖肌腱拉伤，极端撞击下可致肱骨头脱出关节盂。</span>
+                            <span class="lang-en">Forced overhead arm pulling while blocking or rebounding leading to supraspinatus strain or glenohumeral dislocation.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-slate-900 mb-2">
+                            <span class="lang-zh">预防方法</span><span class="lang-en">Prevention</span>
+                        </h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            <span class="lang-zh">强化肩袖肌群（冈上肌、冈下肌、小圆肌、肩胛下肌）的弹力带小重量抗阻稳定性练习。</span>
+                            <span class="lang-en">Strengthen rotator cuff muscles with resistance band internal/external rotations.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-slate-900 mb-2">
+                            <span class="lang-zh">康复训练</span><span class="lang-en">Rehabilitation</span>
+                        </h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            <span class="lang-zh">脱位后需先进行专业复位。恢复期采用姿势训练与弹力带内外旋恢复肩膀旋转力量。</span>
+                            <span class="lang-en">Professional reduction required for dislocation. Perform Y-T-W-L drills and light band rotations during rehab.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. WRIST & HAND SECTION -->
+        <section id="finger" class="scroll-mt-8">
+            <div class="border-b border-slate-200 pb-4 mb-8 flex items-end justify-between">
+                <div>
+                    <span class="text-xs font-extrabold text-teal-600 uppercase tracking-widest block mb-1">
+                        <span class="lang-zh">部位 04</span><span class="lang-en">Region 04</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+                        <span class="lang-zh">手腕与手指损伤</span>
+                        <span class="lang-en">Wrist & Hand Injuries</span>
+                    </h2>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">
+                    <span class="lang-zh">球场高频急救类损伤</span>
+                    <span class="lang-en">Frequent On-Court Trauma</span>
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">
+                        <span class="lang-zh">手指关节挫伤（戳手指）</span>
+                        <span class="lang-en">Finger Jam / Collateral Ligament Sprain</span>
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-3">
+                        <strong><span class="lang-zh">成因：</span><span class="lang-en">Causes: </span></strong>
+                        <span class="lang-zh">篮球正面快速撞击伸直的指尖，导致指间侧副韧带过伸损伤或肌腱止点撕裂。</span>
+                        <span class="lang-en">Direct impact of basketball on extended fingertips, causing joint hyper-extension or extensor tendon tear.</span>
+                    </p>
+                    <p class="text-sm text-slate-600 mb-3">
+                        <strong><span class="lang-zh">预防：</span><span class="lang-en">Prevention: </span></strong>
+                        <span class="lang-zh">接球时保持手掌张开、手指自然放松缓冲。</span>
+                        <span class="lang-en">Maintain relaxed hands and proper ball-catching technique.</span>
+                    </p>
+                    <p class="text-sm text-slate-600">
+                        <strong><span class="lang-zh">应急：</span><span class="lang-en">First Aid: </span></strong>
+                        <span class="lang-zh">立即冰敷，使用邻指固定法（将伤指与邻近健康手指用医用胶布包扎固定）。</span>
+                        <span class="lang-en">Apply ice immediately and use Buddy Taping (tape damaged finger to adjacent healthy finger).</span>
+                    </p>
+                </div>
+
+                <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">
+                        <span class="lang-zh">手腕扭伤</span>
+                        <span class="lang-en">Wrist Sprain</span>
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-3">
+                        <strong><span class="lang-zh">成因：</span><span class="lang-en">Causes: </span></strong>
+                        <span class="lang-zh">失衡跌倒时用单手剧烈撑地，手腕背伸承受全身体重过度压迫。</span>
+                        <span class="lang-en">Landing forcefully on an outstretched hand during a fall, hyperextending wrist ligaments.</span>
+                    </p>
+                    <p class="text-sm text-slate-600 mb-3">
+                        <strong><span class="lang-zh">预防：</span><span class="lang-en">Prevention: </span></strong>
+                        <span class="lang-zh">练习安全跌倒翻滚保护技巧，避免直臂硬撑。</span>
+                        <span class="lang-en">Practice break-fall rolling techniques; avoid landing on stiff straight arms.</span>
+                    </p>
+                    <p class="text-sm text-slate-600">
+                        <strong><span class="lang-zh">应急：</span><span class="lang-en">First Aid: </span></strong>
+                        <span class="lang-zh">佩戴护腕固定 1-2 周，后期进行握力与手腕屈伸力量恢复。</span>
+                        <span class="lang-en">Immobilize with wrist brace for 1-2 weeks, followed by wrist flexor/extensor strengthening.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. LOWER BACK & CORE SECTION -->
+        <section id="back" class="scroll-mt-8">
+            <div class="border-b border-slate-200 pb-4 mb-8 flex items-end justify-between">
+                <div>
+                    <span class="text-xs font-extrabold text-teal-600 uppercase tracking-widest block mb-1">
+                        <span class="lang-zh">部位 05</span><span class="lang-en">Region 05</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+                        <span class="lang-zh">腰背部与核心损伤</span>
+                        <span class="lang-en">Lower Back & Core Injuries</span>
+                    </h2>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">
+                    <span class="lang-zh">动力链发力传输轴心</span>
+                    <span class="lang-en">Core Kinetic Chain Axis</span>
+                </span>
+            </div>
+
+            <div class="injury-card bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:border-teal-500">
+                <h3 class="text-xl font-bold text-slate-900 mb-3">
+                    <span class="lang-zh">急性腰肌拉伤与核心失稳</span>
+                    <span class="lang-en">Lumbar Strain & Core Instability</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <strong class="text-slate-900 block mb-1">
+                            <span class="lang-zh">成因分析：</span><span class="lang-en">Causes:</span>
+                        </strong>
+                        <p class="text-slate-600">
+                            <span class="lang-zh">弯腰抢球或空中碰撞时受到突发剪力，或深层核心肌肉未激活导致腰椎肌肉过载代偿。</span>
+                            <span class="lang-en">Sudden shearing forces during rebound battles or unengaged deep core leading to lumbar muscle strain.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <strong class="text-slate-900 block mb-1">
+                            <span class="lang-zh">预防策略：</span><span class="lang-en">Prevention:</span>
+                        </strong>
+                        <p class="text-slate-600">
+                            <span class="lang-zh">强化平板支撑、鸟狗式核心稳定训练；发力时保持脊柱中立。</span>
+                            <span class="lang-en">Perform planks and Bird-Dog core stability drills; maintain neutral spine alignment.</span>
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <strong class="text-slate-900 block mb-1">
+                            <span class="lang-zh">康复路径：</span><span class="lang-en">Rehabilitation:</span>
+                        </strong>
+                        <p class="text-slate-600">
+                            <span class="lang-zh">急性期后适度进行腰椎伸展练习，拉伸放松髂腰肌与腘绳肌。</span>
+                            <span class="lang-en">McKenzie extension exercises after acute phase; stretch psoas and hamstrings.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- MENTAL REHABILITATION SECTION -->
+    <section id="mindset" class="py-16 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-xs font-bold text-teal-400 uppercase tracking-widest block mb-2">
+                    <span class="lang-zh">心理康复与心态调适</span><span class="lang-en">Mental Rehabilitation & Mindset</span>
+                </span>
+                <h2 class="text-3xl font-black tracking-tight">
+                    <span class="lang-zh">伤病心理调适：重返赛场的隐形钥匙</span>
+                    <span class="lang-en">Mental Recovery: The Hidden Key to Returning to Play</span>
+                </h2>
+                <p class="text-slate-400 text-sm mt-2">
+                    <span class="lang-zh">作为篮球运动员，受伤不仅是对身体的考验，更是对心理韧性的磨炼。积极调适心理状态能显著促进身体的生理愈合。</span>
+                    <span class="lang-en">As an athlete, injury tests both physical and mental resilience. Maintaining a positive mindset significantly accelerates physiological healing.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl hover:border-teal-500/50 transition-colors">
+                    <div class="w-10 h-10 bg-teal-500/20 text-teal-400 rounded-xl flex items-center justify-center mb-4 text-sm font-black">
+                        01
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="lang-zh">接纳情绪，避免焦虑</span>
+                        <span class="lang-en">Accept Emotions & Reduce Anxiety</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-zh">受伤后产生沮丧和对无法上场的焦虑是完全正常的。接纳现状是复出的第一步，将注意力从“我失去了什么”转移到“我现在能做哪些康复”。</span>
+                        <span class="lang-en">Feeling frustrated after an injury is normal. Acceptance is step one: shift focus from what was lost to what rehab actions can be taken today.</span>
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl hover:border-teal-500/50 transition-colors">
+                    <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mb-4 text-sm font-black">
+                        02
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="lang-zh">制定阶段性微目标</span>
+                        <span class="lang-en">Set Micro Goals</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-zh">把目标拆解到每天：今天消肿了 1 厘米、今天完成了 3 组腿抬高。每一个微小的进步都会重新建立起你对身体的掌控感。</span>
+                        <span class="lang-en">Break rehab down daily: swelling reduction, range of motion gain, or quad lifts. Small wins rebuild confidence and control over your body.</span>
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700/60 p-6 rounded-2xl hover:border-teal-500/50 transition-colors">
+                    <div class="w-10 h-10 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center mb-4 text-sm font-black">
+                        03
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="lang-zh">保持与球队连接</span>
+                        <span class="lang-en">Stay Connected with Your Team</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="lang-zh">即使不能上场，也可以坐在场边观战、为队友加油或帮忙记录技术统计。保持团队归属感能极大地消除孤立无助感。</span>
+                        <span class="lang-en">Even while injured, stay involved by cheering from the bench or keeping stats. Belonging to the team mitigates feelings of isolation.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMERGENCY FIRST AID (POLICE PROTOCOL) -->
+    <section id="first-aid" class="py-12 bg-white border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-8">
+                <span class="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-1">
+                    <span class="lang-zh">急性伤病应急处置</span><span class="lang-en">Emergency First Aid Protocol</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                    <span class="lang-zh">急性运动损伤应急原则（POLICE 原则）</span>
+                    <span class="lang-en">Acute Injury First Aid Protocol: P.O.L.I.C.E</span>
+                </h2>
+                <p class="text-sm text-slate-600 mt-2">
+                    <span class="lang-zh">发生扭伤或拉伤后的前 24-48 小时，科学遵循 POLICE 原则替代传统的静止不动，能有效保护组织并加速早期修复。</span>
+                    <span class="lang-en">During the first 24-48 hours after sprains or strains, the P.O.L.I.C.E protocol protects tissue while promoting optimal healing.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="p-5 rounded-2xl bg-teal-50/50 border border-teal-100 hover:border-teal-300 transition-colors">
+                    <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-black text-sm mb-3">P</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1">
+                        <span class="lang-zh">保护 (Protect)</span>
+                        <span class="lang-en">Protect</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <span class="lang-zh">立即停止运动，佩戴护具或支架固定伤处，防止二次受力撕裂。</span>
+                        <span class="lang-en">Stop playing immediately; use braces or splints to prevent further tissue tearing.</span>
+                    </p>
+                </div>
+                <div class="p-5 rounded-2xl bg-teal-50/50 border border-teal-100 hover:border-teal-300 transition-colors">
+                    <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-black text-sm mb-3">OL</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1">
+                        <span class="lang-zh">适当负重 (Optimal Loading)</span>
+                        <span class="lang-en">Optimal Loading</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <span class="lang-zh">在无明显剧痛的前提下进行早期微活动，促进韧带与肌肉纤维重塑。</span>
+                        <span class="lang-en">Gentle, pain-free movement encourages early tissue remodeling and strength.</span>
+                    </p>
+                </div>
+                <div class="p-5 rounded-2xl bg-teal-50/50 border border-teal-100 hover:border-teal-300 transition-colors">
+                    <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-black text-sm mb-3">I</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1">
+                        <span class="lang-zh">冰敷 (Ice)</span>
+                        <span class="lang-en">Ice</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <span class="lang-zh">冰敷 15-20 分钟/次，控制局部炎性渗出，减缓神经传导痛感。</span>
+                        <span class="lang-en">Apply cold packs 15-20 mins per session to manage acute pain and swelling.</span>
+                    </p>
+                </div>
+                <div class="p-5 rounded-2xl bg-teal-50/50 border border-teal-100 hover:border-teal-300 transition-colors">
+                    <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-black text-sm mb-3">C</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1">
+                        <span class="lang-zh">加压 (Compression)</span>
+                        <span class="lang-en">Compression</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <span class="lang-zh">使用弹性绷带适当加压包扎，限制组织液积聚，减轻肿胀疼痛。</span>
+                        <span class="lang-en">Wrap with elastic bandages to control fluid accumulation and swelling.</span>
+                    </p>
+                </div>
+                <div class="p-5 rounded-2xl bg-teal-50/50 border border-teal-100 hover:border-teal-300 transition-colors">
+                    <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-black text-sm mb-3">E</div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1">
+                        <span class="lang-zh">抬高 (Elevation)</span>
+                        <span class="lang-en">Elevation</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <span class="lang-zh">将受伤肢体抬高至高于心脏平面的高度，利用重力促进血液回流。</span>
+                        <span class="lang-en">Elevate injured limb above heart level to assist venous drainage.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMIC REFERENCES & CITATIONS SECTION -->
+    <section id="references" class="py-12 bg-slate-100 border-t border-slate-200 text-slate-600 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="font-bold text-slate-800 text-sm mb-3">
+                <span class="lang-zh">学术参考资料与文献引用</span>
+                <span class="lang-en">Academic References & Citations (MLA Format)</span>
+            </h3>
+            <ul class="space-y-2 list-disc list-inside text-slate-600 leading-relaxed">
+                <li>“Basketball Injury Prevention - OrthoInfo - AAOS.” <i>Aaos.Org</i>, American Academy of Orthopaedic Surgeons, 2022, <a href="https://orthoinfo.aaos.org/en/staying-healthy/basketball-injury-prevention" target="_blank" class="text-teal-600 hover:underline">orthoinfo.aaos.org/en/staying-healthy/basketball-injury-prevention</a>.</li>
+                <li>Drakos, Mark C., et al. “Injury Trends in American Professional Basketball.” <i>Sports Health</i>, vol. 2, no. 5, 2010, pp. 401–408.</li>
+                <li>Bleakley, Chris, et al. “Using the PRICE or POLICE Protocol for Acute Soft Tissue Injury Management.” <i>British Journal of Sports Medicine</i>, vol. 46, no. 4, 2012, pp. 220–221.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <p class="font-bold text-white mb-1">
+                    <span class="lang-zh">篮球运动损伤与科学康复指南</span>
+                    <span class="lang-en">Basketball Injury & Scientific Rehabilitation Guide</span>
+                </p>
+                <p class="text-xs text-slate-500">
+                    <span class="lang-zh">设计与研究：Leo Zhang | 个人项目 2026</span>
+                    <span class="lang-en">Research & Design: Leo Zhang | Personal Project Proposal 2026</span>
+                </p>
+            </div>
+            <div class="text-xs text-slate-500 text-center md:text-right max-w-md">
+                <p class="mt-1">
+                    <span class="lang-zh">免责声明：本网站仅供科普交流与学术展示，不可替代专业诊疗建议。发生严重创伤请及时就医。</span>
+                    <span class="lang-en">Disclaimer: This site is for educational/academic purposes only and does not substitute medical advice.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SEARCH MODAL -->
+    <div id="searchModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden flex items-start justify-center pt-20 px-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden border border-slate-200">
+            <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+                <div class="flex items-center space-x-3 w-full">
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="" class="w-full outline-none text-slate-800 placeholder-slate-400 text-sm">
+                </div>
+                <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-slate-600 px-2.5 py-1 text-xs font-bold border border-slate-200 rounded-lg">
+                    <span class="lang-zh">关闭</span><span class="lang-en">Close</span>
+                </button>
+            </div>
+            <div id="searchResults" class="p-4 max-h-80 overflow-y-auto space-y-2 text-sm">
+                <p class="text-slate-400 text-center py-4">
+                    <span class="lang-zh">在上方输入关键词开始搜索...</span>
+                    <span class="lang-en">Type above to search injuries...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Language Toggle Logic
+        function setLanguage(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            localStorage.setItem('preferred_lang', lang);
+            
+            const zhBtn = document.getElementById('lang-zh-btn');
+            const enBtn = document.getElementById('lang-en-btn');
+            const searchInput = document.getElementById('searchInput');
+            
+            if (lang === 'zh') {
+                zhBtn.className = "px-2 py-1 rounded-md transition-all text-xs bg-teal-600 text-white font-bold shadow-sm";
+                enBtn.className = "px-2 py-1 rounded-md transition-all text-xs text-slate-600 hover:text-slate-900";
+                if (searchInput) searchInput.placeholder = "搜索伤病 (如：崴脚、前交叉韧带、跟腱炎、戳手指...)";
+            } else {
+                enBtn.className = "px-2 py-1 rounded-md transition-all text-xs bg-teal-600 text-white font-bold shadow-sm";
+                zhBtn.className = "px-2 py-1 rounded-md transition-all text-xs text-slate-600 hover:text-slate-900";
+                if (searchInput) searchInput.placeholder = "Search injuries (e.g., Ankle, ACL, Tendonitis, Finger...)";
+            }
+        }
+
+        // Initialize Saved Language
+        const savedLang = localStorage.getItem('preferred_lang') || 'zh';
+        setLanguage(savedLang);
+
+        // Toggle Search Modal
+        function toggleSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.getElementById('searchInput').focus();
+            }
+        }
+
+        // Clean Injury Database
+        const injuryDatabase = [
+            { name_zh: '外侧踝关节扭伤（崴脚）', name_en: 'Inversion Ankle Sprain ("Rolled Ankle")', target: 'ankle', region_zh: '踝关节与足部', region_en: 'Ankle & Foot' },
+            { name_zh: '跟腱炎', name_en: 'Achilles Tendonitis', target: 'ankle', region_zh: '踝关节与足部', region_en: 'Ankle & Foot' },
+            { name_zh: '前交叉韧带损伤', name_en: 'Anterior Cruciate Ligament (ACL) Tear', target: 'knee', region_zh: '膝关节', region_en: 'Knee Joint' },
+            { name_zh: '髌骨肌腱炎（跳跃膝）', name_en: 'Patellar Tendonitis ("Jumper\'s Knee")', target: 'knee', region_zh: '膝关节', region_en: 'Knee Joint' },
+            { name_zh: '肩袖拉伤与肩关节脱位', name_en: 'Rotator Cuff Strain & Dislocation', target: 'shoulder', region_zh: '肩部与上肢', region_en: 'Shoulder' },
+            { name_zh: '手指关节挫伤（戳手指）', name_en: 'Finger Jam / Collateral Ligament Sprain', target: 'finger', region_zh: '手腕与手指', region_en: 'Wrist & Hand' },
+            { name_zh: '手腕扭伤', name_en: 'Wrist Sprain', target: 'finger', region_zh: '手腕与手指', region_en: 'Wrist & Hand' },
+            { name_zh: '急性腰肌拉伤与核心失稳', name_en: 'Lumbar Strain & Core Instability', target: 'back', region_zh: '腰背部与核心', region_en: 'Lower Back & Core' }
+        ];
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const container = document.getElementById('searchResults');
+            const currentLang = document.documentElement.getAttribute('data-lang');
+
+            if (!query) {
+                container.innerHTML = currentLang === 'zh' 
+                    ? '<p class="text-slate-400 text-center py-4">在上方输入关键词开始搜索...</p>'
+                    : '<p class="text-slate-400 text-center py-4">Type above to search injuries...</p>';
+                return;
+            }
+
+            const results = injuryDatabase.filter(item => 
+                item.name_zh.toLowerCase().includes(query) || 
+                item.name_en.toLowerCase().includes(query) ||
+                item.region_zh.toLowerCase().includes(query) ||
+                item.region_en.toLowerCase().includes(query)
+            );
+
+            if (results.length === 0) {
+                container.innerHTML = currentLang === 'zh'
+                    ? '<p class="text-slate-400 text-center py-4">未找到相关伤病，请尝试换一个关键词</p>'
+                    : '<p class="text-slate-400 text-center py-4">No matching injuries found.</p>';
+                return;
+            }
+
+            container.innerHTML = results.map(item => `
+                <a href="#${item.target}" onclick="toggleSearchModal()" class="block p-3 rounded-xl hover:bg-slate-100 transition border border-transparent hover:border-slate-200">
+                    <div class="font-bold text-slate-800">${currentLang === 'zh' ? item.name_zh : item.name_en}</div>
+                    <div class="text-xs text-slate-400">${currentLang === 'zh' ? '所属部位：' + item.region_zh : 'Region: ' + item.region_en}</div>
+                </a>
+            `).join('');
+        }
+
+        // Checklist Progress Logic
+        function updateChecklistProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item');
+            const total = checkboxes.length;
+            let checkedCount = 0;
+
+            checkboxes.forEach(box => {
+                if (box.checked) checkedCount++;
+            });
+
+            const percentage = (checkedCount / total) * 100;
+            document.getElementById('progress-bar').style.width = percentage + '%';
+
+            const resultText = document.getElementById('checklist-result');
+            const currentLang = document.documentElement.getAttribute('data-lang');
+
+            if (checkedCount === total) {
+                resultText.innerHTML = currentLang === 'zh'
+                    ? '<span class="text-teal-600">评估通过！你可以逐步恢复高强度对抗训练</span>'
+                    : '<span class="text-teal-600">Passed! You may gradually resume full-contact play</span>';
+            } else if (checkedCount > 0) {
+                resultText.innerHTML = currentLang === 'zh'
+                    ? `<span class="text-amber-600">完成度：${checkedCount}/${total} - 建议继续进行康复与评估</span>`
+                    : `<span class="text-amber-600">Progress: ${checkedCount}/${total} - Continue rehabilitation & testing</span>`;
+            } else {
+                resultText.innerHTML = currentLang === 'zh' ? '请勾选上述项目进行评估' : 'Check items above to evaluate';
+            }
+        }
+    </script>
+</body>
+</html>
